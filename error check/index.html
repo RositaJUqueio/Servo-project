@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Editor with Error Highlighting</title>
+  
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/theme/material.css">
+
+  <!-- CodeMirror JS and JavaScript Linting Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/lint/lint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.4/jshint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/lint/javascript-lint.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/lint/lint.min.css">
+</head>
+<body>
+
+<h2>JavaScript Editor with Error Highlighting</h2>
+<textarea id="codeEditor">// Write your JavaScript code here!</textarea>
+
+<script>
+  // Initialize CodeMirror
+  const editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+    mode: "javascript",           // JavaScript mode
+    theme: "material",            // Theme for the editor
+    lineNumbers: true,            // Show line numbers
+    gutters: ["CodeMirror-lint-markers"], // Enable lint markers
+    lint: true,                   // Enable linting
+  });
+
+  // Set some initial code in the editor
+  editor.setValue("console.log('Hello, world!');\n\n// Start coding...");
+</script>
+
+</body>
+</html>
